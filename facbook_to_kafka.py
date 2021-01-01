@@ -8,7 +8,7 @@ class FacebookStreamProducer():
 
     def __init__(self):
         client= KafkaClient('localhost:9092')
-        self.producer=SimpleProducer(client,async=True,
+        self.producer=SimpleProducer(client,async = True,
                                       batch_send_every_n=1000,
                                       batch_send_every_t=10)
     
