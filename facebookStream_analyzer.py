@@ -54,6 +54,8 @@ def stream(ssc,posWords,negWords,duration):
     #adding prvious time batch's counts to current ones
     upto_now_counts=this_time_pairCount.upadateStateByKey(update_via_add)
 
+    upto_now_counts.pprint(2)
+
     counter=[]#counter array will contain word count for all time batches
     this_time_pairCount.foreachRDD(lambda t,rdd: counter.append(rdd.collect()))
     
