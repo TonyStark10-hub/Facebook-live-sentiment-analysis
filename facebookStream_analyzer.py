@@ -9,7 +9,7 @@ def main():
     conf=SparkConf.setMaster('local[2]').setAppName('FBstream')
     sc=SparkContext(conf=conf)
     #streaming context with batch interval of 10 seconds
-    ssc=StreamingContext(ss,10)
+    ssc=StreamingContext(sc,10)
     ssc.checkpoint('checkpoint')
 
     sc.setLogLevel('WARN')
